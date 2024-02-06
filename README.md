@@ -68,9 +68,32 @@
 
 	```
 6. 원격저장소에 배포 `git flow release publish 버전`
-    * 배포된 소스를 가지고 QA부서원과 함께 테스트를 진행할 수 있다.
+  배포된 소스를 가지고 QA부서원과 함께 테스트를 진행할 수 있다.
+    ```bash
+    $ git flow release publish 1.0.0
+    Enumerating objects: 5, done.
+    Counting objects: 100% (5/5), done.
+    Delta compression using up to 12 threads
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 1.67 KiB | 1.67 MiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+    remote: 
+    remote: Create a pull request for 'release/1.0.0' on GitHub by visiting:
+    remote:      https://github.com/nob0dj/gitflow-solo/pull/new/release/1.1.0
+    remote:
+    To https://github.com/nob0dj/gitflow-solo.git
+    * [new branch]      release/1.0.0 -> release/1.0.0
+    branch 'release/1.0.0' set up to track 'origin/release/1.0.0'.
+    Already on 'release/1.0.0'
+    Your branch is up to date with 'origin/release/1.0.0'.
+
+    Summary of actions:
+    - The remote branch 'release/1.0.0' was created or updated
+    - The local branch 'release/1.0.0' was configured to track the remote branch
+    - You are now on branch 'release/1.0.0'
+    ```
 7. 로컬저장소 운영master에 배포 `git flow release finish 버젼`
-	* 태그 메세지를 작성해야 한다.
+  태그 메세지를 작성해야 한다.
 	```bash
 	$ git flow release finish 1.0.0
 	Switched to branch 'master'
@@ -97,8 +120,9 @@
 	- You are now on branch 'develop'
 	```
 8. 원격저장소에 push 
-	- 원격 master에 생성된 tag를 push한다. 
+	- 로컬 master에 생성된 tag를 원격 master로 push한다. 
 	- 추가적인 release 작성이 필요하다.
+	- 원격저장소 default 브랜치를 develop으로 수정한다.
 
 최종 commit tree는 다음과 같다.
 ![소스트리 history뷰](https://d.pr/i/KxyRsx+)
